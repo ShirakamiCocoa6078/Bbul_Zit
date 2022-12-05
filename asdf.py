@@ -2,6 +2,7 @@ import random
 "5weapon 80 chunjyang, 66~ %up, 2 pickddul 1pickup, 4 10stack"
 "5character 90 chunhyang, 76~ %up, 1 pickddul 1 pickup, 4 10stack"
 #확률은 0.600부터 시작, %up부터 76 32%~ 89까지 33%, 1회당 0.08333333333333333씩 퍼센트업
+#https://namu.wiki/w/%EC%9B%90%EC%8B%A0/%EA%B8%B0%EC%9B%90#s-3
 stack = 0
 def clearGet():
     get = {'3weapon' = 0, '4pickCharacter' = 0, '4pickWeapon' = 0, '4character' = 0, 
