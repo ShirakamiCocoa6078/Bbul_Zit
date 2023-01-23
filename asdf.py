@@ -31,9 +31,9 @@ if (x < prob5) {
 stack = 0
 stack4 = [0, False]
 stack5 = [0, False]
-get = {'3W' = 0, '4PC' = 0, '4PW' = 0, '4C' = 0, '4W' = 0, '5PC' = 0, '5PW' = 0, '5C' = 0, '5W' = 0}
+get = {'3W' : 0, '4PC' : 0, '4PW' : 0, '4C' : 0, '4W' : 0, '5PC' : 0, '5PW' : 0, '5C' : 0, '5W' : 0}
 def clearGet():
-    get = {'3W' = 0, '4PC' = 0, '4PW' = 0, '4C' = 0, '4W' = 0, '5PC' = 0, '5PW' = 0, '5C' = 0, '5W' = 0}
+    get = {'3W' : 0, '4PC' : 0, '4PW' : 0, '4C' : 0, '4W' : 0, '5PC' : 0, '5PW' : 0, '5C' : 0, '5W' : 0}
 def PickChar1(): #캐릭뽑
     if stack5[0] == 90: #5성 천장
         if stack5[1]: #5성 확정
@@ -83,9 +83,11 @@ def PickChar1(): #캐릭뽑
                 
                 
     else: #일반 가챠(확률 적용)
-        firstPer = r.randint(1, 100000)
+        firstPer = r.randint(1, 100000) #100.000
         if stack5[0] >= 74: # 확률상승
-            if firstPer <=
+            StackValue = stack5[0] - 74
+            if firstPer <= 660+(StackValue*0.08333333333333333):
+                
         else: #5성 확률 상승 이전
             if firstPer<= 5100: # 5.100% 4성
                 e = r.randint(1,2) #픽업여부
