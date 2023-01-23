@@ -31,6 +31,7 @@ if (x < prob5) {
 stack = 0
 stack4 = [0, False]
 stack5 = [0, False]
+get = {'3W' = 0, '4PC' = 0, '4PW' = 0, '4C' = 0, '4W' = 0, '5PC' = 0, '5PW' = 0, '5C' = 0, '5W' = 0}
 def clearGet():
     get = {'3W' = 0, '4PC' = 0, '4PW' = 0, '4C' = 0, '4W' = 0, '5PC' = 0, '5PW' = 0, '5C' = 0, '5W' = 0}
 def PickChar1(): #캐릭뽑
@@ -40,7 +41,7 @@ def PickChar1(): #캐릭뽑
             stack5 = [0, False]
             stack4[0] += 1
             get['5PC'] += 1
-        else: #불확정
+        else: #미확정
             e = r.randint(1,2)
             if e == 1: #픽업
                 print('5star pickup')
@@ -52,6 +53,8 @@ def PickChar1(): #캐릭뽑
                 stack5 = [0, True]
                 stack4[0] += 1
                 get["5C"] += 1
+                
+                
     elif stack4[0] >= 10:
         if stack4[1]: #확정4성 스택
             print('4star pickup')
@@ -77,6 +80,8 @@ def PickChar1(): #캐릭뽑
                 stack4 = [0, False]
                 stack5[0] += 1
                 get['4PC'] += 1
+                
+                
     else: #일반 가챠(확률 적용)
         firstPer = r.randint(1, 100000)
         if stack5[0] >= 74: # 확률상승
@@ -129,8 +134,6 @@ def PickChar1(): #캐릭뽑
 #value = input('kind of gacha(W/character) : ')
 #if value == "character":
     
-
-
 
 
 
