@@ -18,6 +18,8 @@ def setPer():
     prob5 = _rate5 + max(0, (stack5[0]-_pity5) * 10 * _rate5)
     prob4 = _rate4 + max(0, (stack4[0]-_pity4) * 10 * _rate4)
 def pickUp():
+    global get, stack5, stack4, x, prob4, prob5
+    setPer()
     if (x < prob5):
         print("5star")
         get['5C'] = get['5C'] + 1
