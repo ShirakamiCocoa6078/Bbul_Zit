@@ -38,11 +38,11 @@ def printResult():
         f"""
         5 star List[
             character : {get['5PC'] + get['5C']}
-            weapon : {get{'5PW'} + get['5W']}
+            weapon : {get['5PW'] + get['5W']}
         ]
         4 star List[
             character : {get['4PC'] + get['4C']}
-            weapon : {get{'4PW'} + get['4W']}
+            weapon : {get['4PW'] + get['4W']}
         ]
         3 star : {get['3W']}
     """
