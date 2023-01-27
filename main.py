@@ -18,14 +18,14 @@ def setPer():
     prob5 = _rate5 + max(0, (stack5[0]-_pity5) * 10 * _rate5)
     prob4 = _rate4 + max(0, (stack4[0]-_pity4) * 10 * _rate4)
 if (x < prob5):
-	#drop(5star)
-	counter5 = 1
-	counter4 += 1
+	print("5star")
+	stack5[0] = 0
+	stack4[0] += 1
 else if (x < prob4 + prob5):
-	#drop(4star)
-	counter5 += 1
-	counter4 = 1
+	print("4star")
+	stack5[0] += 1
+	stack4[0] = 0
 else:
-	#drop(3star)
-	counter5 += 1
-	counter4 += 1
+	print("3star")
+	stack5[0] += 1
+	stack4[0] += 1
