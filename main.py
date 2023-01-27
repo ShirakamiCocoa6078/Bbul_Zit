@@ -17,15 +17,33 @@ def setPer():
     x = random.randint(1, 10) * 0.01 # between 0.0 and 1.0
     prob5 = _rate5 + max(0, (stack5[0]-_pity5) * 10 * _rate5)
     prob4 = _rate4 + max(0, (stack4[0]-_pity4) * 10 * _rate4)
-if (x < prob5):
-	print("5star")
-	stack5[0] = 0
-	stack4[0] += 1
-else if (x < prob4 + prob5):
-	print("4star")
-	stack5[0] += 1
-	stack4[0] = 0
-else:
-	print("3star")
-	stack5[0] += 1
-	stack4[0] += 1
+def pickUp():
+    if (x < prob5):
+        print("5star")
+        get['5C'] = get['5C'] + 1
+        stack5[0] = 0
+        stack4[0] += 1
+    elif (x < prob4 + prob5):
+        print("4star")
+        get['4C'] = get['4C'] + 1
+        stack5[0] += 1
+        stack4[0] = 0
+    else:
+        print("3star")
+        get['3W'] = get['3W'] + 1
+        stack5[0] += 1
+        stack4[0] += 1
+def printResult():
+    print(
+        f"""
+        5 star List[
+            character : {get['5PC'] + get['5C']}
+            weapon : {get{'5PW'} + get['5W']}
+        ]
+        4 star List[
+            character : {get['4PC'] + get['4C']}
+            weapon : {get{'4PW'} + get['4W']}
+        ]
+        3 star : {get['3W']}
+    """
+    )
