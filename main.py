@@ -14,7 +14,7 @@ def clearGet():
 prob5, prob4, x = 0,0,0
 def setPer():
     global x, prob5, prob4
-    x = random.randint(1, 10) * 0.01 # between 0.0 and 1.0
+    x = random.randint(1, 100) * 0.01 # between 0.0 and 1.0
     prob5 = _rate5 + max(0, (stack5[0]-_pity5) * 10 * _rate5)
     prob4 = _rate4 + max(0, (stack4[0]-_pity4) * 10 * _rate4)
 def pickUp():
@@ -38,14 +38,18 @@ def pickUp():
 def printResult():
     print(
         f"""
-        5 star List[
-            character : {get['5PC'] + get['5C']}
-            weapon : {get['5PW'] + get['5W']}
-        ]
-        4 star List[
-            character : {get['4PC'] + get['4C']}
-            weapon : {get['4PW'] + get['4W']}
-        ]
-        3 star : {get['3W']}
+5 star List[
+    pickup character : {get['5PC']}
+    pickup weapon : {get['5PW']}
+    non-pick character : {get['5C']}
+    non-pick weapon : {get['5W']}
+]
+4 star List[
+    pickup character : {get['4PC']}
+    pickup weapon : {get['4PW']}
+    non-pick character : {get['4C']}
+    non-pick weapon : {get['4W']}
+]
+3 star weapon : {get['3W']}
     """
     )
